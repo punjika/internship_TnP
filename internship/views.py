@@ -28,8 +28,8 @@ from uuid import uuid4
 
 
 @api_view(["POST"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def create_company_with_offers(request):
     try:
         data = JSONParser().parse(request)
@@ -64,8 +64,8 @@ def create_company_with_offers(request):
 
 
 @api_view(["GET"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def get_company_with_offers(request, pk=None):
     try:
         if pk:
@@ -110,8 +110,8 @@ def get_company_with_offers(request, pk=None):
 
 
 @api_view(["GET"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def get_all_companies(request):
     try:
         companies = InternshipRegistration.objects.all()
@@ -131,8 +131,8 @@ def get_all_companies(request):
 
 
 @api_view(["POST"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def create_notice(request, pk):
     try:
         company = InternshipRegistration.objects.get(id=pk)
@@ -151,8 +151,8 @@ def create_notice(request, pk):
 
 
 @api_view(["GET"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def get_notice(request, pk):
     try:
         notice = InternshipNotice.objects.get(id=pk)
@@ -165,8 +165,8 @@ def get_notice(request, pk):
 
 
 @api_view(["GET"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def job_application(request, pk):
     try:
         # user = User.objects.get(email=request.user.email)
@@ -197,8 +197,8 @@ def job_application(request, pk):
 
 
 @api_view(["GET"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 def get_all_applied_students(request, pk):
     try:
         company = InternshipApplication(pk=pk)
@@ -213,8 +213,8 @@ def get_all_applied_students(request, pk):
 
 
 @api_view(["POST"])
-@authentication_classes([SessionAuthentication, BasicAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
+# @permission_classes([IsAuthenticated])
 @parser_classes([MultiPartParser, FormParser])
 def create_job_acceptance(request):
     # user = User.objects.get(email=request.user.email)
@@ -253,7 +253,7 @@ def create_job_acceptance(request):
     return JsonResponse({"success": "Job application created"})
 
 
-@authentication_classes([SessionAuthentication, BasicAuthentication])
+# @authentication_classes([SessionAuthentication, BasicAuthentication])
 @api_view(["GET"])
 def get_job_acceptance_by_id(request, pk):
     try:

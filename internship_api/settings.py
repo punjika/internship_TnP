@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'internship_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'noticeduty',
+        'NAME': 'internship_t_n_p',
         'USER': 'root',
-        'PASSWORD': 'Mysql@123',
+        'PASSWORD': 'yourpassword',
         'HOST': 'localhost',
         'PORT': '3306',
     }
